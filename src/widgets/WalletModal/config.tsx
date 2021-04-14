@@ -1,43 +1,60 @@
-import Metamask from "./icons/Metamask";
-import MathWallet from "./icons/MathWallet";
-import TokenPocket from "./icons/TokenPocket";
-import TrustWallet from "./icons/TrustWallet";
-import WalletConnect from "./icons/WalletConnect";
-import BinanceChain from "./icons/BinanceChain";
-import { Config, ConnectorNames } from "./types";
+import Metamask from './icons/Metamask'
+import MathWallet from './icons/MathWallet'
+import TokenPocket from './icons/TokenPocket'
+import TrustWallet from './icons/TrustWallet'
+import WalletConnect from './icons/WalletConnect'
+import BinanceChain from './icons/BinanceChain'
+import Binance from './icons/Binance'
+import Huobi from './icons/Huobi'
 
-const connectors: Config[] = [
+import { WalletsConfig, ConnectorNames, NetworksConfig } from './types'
+
+export const wallets: WalletsConfig[] = [
   {
-    title: "Metamask",
+    title: 'Metamask',
     icon: Metamask,
     connectorId: ConnectorNames.Injected,
   },
   {
-    title: "TrustWallet",
+    title: 'Trust Wallet',
     icon: TrustWallet,
     connectorId: ConnectorNames.Injected,
   },
   {
-    title: "MathWallet",
+    title: 'Math Wallet',
     icon: MathWallet,
     connectorId: ConnectorNames.Injected,
   },
   {
-    title: "TokenPocket",
+    title: 'Token Pocket',
     icon: TokenPocket,
     connectorId: ConnectorNames.Injected,
   },
   {
-    title: "WalletConnect",
+    title: 'Wallet Connect',
     icon: WalletConnect,
     connectorId: ConnectorNames.WalletConnect,
   },
   {
-    title: "Binance Chain Wallet",
+    title: 'Binance Chain Wallet',
     icon: BinanceChain,
     connectorId: ConnectorNames.BSC,
   },
-];
+]
 
-export default connectors;
-export const connectorLocalStorageKey = "connectorId";
+export const networks: NetworksConfig[] = [
+  {
+    title: 'Binance',
+    icon: Binance,
+    label: 'Binance Smart Chain',
+    chainId: 97,
+  },
+  {
+    title: 'Huobi',
+    icon: Huobi,
+    label: 'Huobi ECO Chain',
+    chainId: 256,
+  },
+]
+
+export const connectorLocalStorageKey = 'connectorId'

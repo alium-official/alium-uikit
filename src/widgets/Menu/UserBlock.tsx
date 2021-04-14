@@ -1,20 +1,24 @@
-import React from "react";
-import styled from "styled-components";
-import Button from "../../components/Button/Button";
-import { useWalletModal } from "../WalletModal";
-import { Login } from "../WalletModal/types";
-import { AddIcon } from "../../components/Svg";
+import React from 'react'
+import styled from 'styled-components'
+import Button from '../../components/Button/Button'
+import { useWalletModal } from '../WalletModal'
+import { Login } from '../WalletModal/types'
+import { AddIcon } from '../../components/Svg'
+import NetworkSwitch from './NetworkSwitch'
+import Flex from "../../components/Flex/Flex";
 
 interface Props {
-  account?: string;
-  login: Login;
-  logout: () => void;
-  buttonTitle?: string;
-  modalTitle?: string;
-  modalFooter?: string;
-  modelCopyAddress?: string;
-  modelLogout?: string;
-  modalBscScan?: string;
+  account?: string
+  login: Login
+  logout: () => void
+  buttonTitle?: string
+  modalTitle?: string
+  modelLogout?: string
+  balance?: string
+  explorerName?: string
+  explorerLink?: string
+  onTransactionHistoryHandler?: any;
+  balanceHook?: any;
 }
 
 const StyledConnectButton = styled.div`
@@ -22,33 +26,46 @@ const StyledConnectButton = styled.div`
 `
 
 const StyledAddIcon = styled.div`
-  border: 1.5px solid #FFFFFF;
+  border: 1.5px solid #ffffff;
   display: flex;
   border-radius: 6px;
   margin-right: 17px;
   * {
     margin: auto;
   }
-  @media screen and (max-width: 480px){
+  @media screen and (max-width: 480px) {
     display: none;
   }
 `
 
 const StyledButtonTitle = styled.div`
-  font-size: 14px
+  font-size: 14px;
 `
 
-const UserBlock: React.FC<Props> = ({ account, login, logout, buttonTitle, modalTitle, modalFooter, modelCopyAddress, modelLogout, modalBscScan }) => {
-  const { onPresentConnectModal, onPresentAccountModal } = useWalletModal(login, logout, account, modalTitle, modalFooter, modelCopyAddress, modelLogout, modalBscScan);
-  const accountEllipsis = account ? `${account.substring(0, 4)}...${account.substring(account.length - 4)}` : null;
+const UserBlock: React.FC<Props> = (props) => {
+  const { account, login, logout, buttonTitle, modalTitle, modelLogout, balance, explorerName, explorerLink, onTransactionHistoryHandler, balanceHook } = props
+  const { onPresentConnectModal, onPresentAccountModal } = useWalletModal(
+    login,
+    logout,
+    account,
+    modalTitle,
+    modelLogout,
+    balance,
+    explorerName,
+    explorerLink,
+    onTransactionHistoryHandler,
+    balanceHook
+  )
+  const accountEllipsis = account ? `${account.substring(0, 4)}...${account.substring(account.length - 4)}` : null
   return (
-    <div>
+    <Flex>
+      <NetworkSwitch />
       {account ? (
         <Button
           size="md"
           variant="tertiary"
           onClick={() => {
-            onPresentAccountModal();
+            onPresentAccountModal()
           }}
         >
           {accountEllipsis}
@@ -58,20 +75,18 @@ const UserBlock: React.FC<Props> = ({ account, login, logout, buttonTitle, modal
           <Button
             size="md"
             onClick={() => {
-              onPresentConnectModal();
+              onPresentConnectModal()
             }}
           >
             <StyledAddIcon>
               <AddIcon color="#fff" />
             </StyledAddIcon>
-            <StyledButtonTitle>
-              {buttonTitle}
-            </StyledButtonTitle>
+            <StyledButtonTitle>{buttonTitle}</StyledButtonTitle>
           </Button>
         </StyledConnectButton>
       )}
-    </div>
-  );
-};
+    </Flex>
+  )
+}
 
-export default UserBlock;
+export default UserBlock

@@ -1,5 +1,5 @@
-import React from "react";
-import { SvgProps } from "../Svg/types";
+import React from 'react'
+import { SvgProps } from '../Svg/types'
 
 export const GithubIcon: React.FC<SvgProps> = () => (
   <svg width="40" height="41" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -16,7 +16,7 @@ export const GithubIcon: React.FC<SvgProps> = () => (
       </clipPath>
     </defs>
   </svg>
-);
+)
 
 export const TelegramIcon: React.FC<SvgProps> = () => (
   <svg width="40" height="41" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -26,7 +26,7 @@ export const TelegramIcon: React.FC<SvgProps> = () => (
     />
     <rect x="0.5" y="1.31018" width="39" height="39" rx="5.5" stroke="#D2D6E5" />
   </svg>
-);
+)
 
 export const TwitterIcon: React.FC<SvgProps> = () => (
   <svg width="40" height="41" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -43,7 +43,7 @@ export const TwitterIcon: React.FC<SvgProps> = () => (
       </clipPath>
     </defs>
   </svg>
-);
+)
 
 export const MediumIcon: React.FC<SvgProps> = () => (
   <svg width="40" height="41" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -60,4 +60,4 @@ export const MediumIcon: React.FC<SvgProps> = () => (
       </clipPath>
     </defs>
   </svg>
-);
+)

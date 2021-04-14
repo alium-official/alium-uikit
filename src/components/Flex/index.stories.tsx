@@ -1,13 +1,13 @@
-import React from "react";
-import Flex from "./Flex";
-import Text from "../Text/Text";
-import { Link } from "../Link";
+import React from 'react'
+import Flex from './Flex'
+import Text from '../Text/Text'
+import { Link } from '../Link'
 
 export default {
-  title: "Components/Flex",
+  title: 'Components/Flex',
   component: Flex,
   argTypes: {},
-};
+}
 
 export const Default: React.FC = () => {
   return (
@@ -24,5 +24,5 @@ export const Default: React.FC = () => {
         <span>center</span>
       </Flex>
     </div>
-  );
-};
+  )
+}

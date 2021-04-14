@@ -1,13 +1,12 @@
-import React from "react";
-import SocialNetworks from "./SocialNetworks";
+import React from 'react'
+import SocialNetworks from './SocialNetworks'
 
 export default {
-  title: "Components/SocialNetworks",
+  title: 'Components/SocialNetworks',
   component: SocialNetworks,
   argTypes: {},
-};
-
+}
 
 export const Default = () => {
-  return <SocialNetworks />;
-};
+  return <SocialNetworks />
+}

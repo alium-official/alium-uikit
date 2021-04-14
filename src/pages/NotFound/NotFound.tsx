@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react'
 
-import styled from "styled-components";
-import { Button } from "../../components/Button";
-import { Text } from "../../components/Text";
-import { Heading } from "../../components/Heading";
-import { SocialNetworks } from "../../components/SocialNetworks";
-import NotfoundPreview from "./assets/notfound-preview";
-import CloudRight from "./assets/background-cloud-right";
-import CloudLeft from "./assets/background-cloud-left";
+import styled from 'styled-components'
+import { Button } from '../../components/Button'
+import { Text } from '../../components/Text'
+import { Heading } from '../../components/Heading'
+import { SocialNetworks } from '../../components/SocialNetworks'
+import NotfoundPreview from './assets/notfound-preview'
+import CloudRight from './assets/background-cloud-right'
+import CloudLeft from './assets/background-cloud-left'
 
 const StyledWrapper = styled.div`
   width: 100%;
@@ -20,7 +20,7 @@ const StyledWrapper = styled.div`
   box-sizing: border-box;
   overflow: auto;
   overflow-x: hidden;
-  
+
   @media screen and (max-width: 1024px) {
     display: flex;
     flex-direction: column-reverse;
@@ -29,7 +29,7 @@ const StyledWrapper = styled.div`
   @media screen and (max-width: 768px) {
     padding: 8px;
   }
-`;
+`
 
 const InfoWrapper = styled.div`
   display: flex;
@@ -43,20 +43,20 @@ const InfoWrapper = styled.div`
   @media screen and (max-width: 480px) {
     width: 100%;
   }
-`;
+`
 
 const ImageWrapper = styled.div`
   & > svg {
     width: 100%;
     height: auto;
   }
-`;
+`
 
 const CloudsWrapper = styled.div`
   top: 0;
   left: 0;
   position: absolute;
-  height: calc(100vh - 64px); 
+  height: calc(100vh - 64px);
   width: 100vw;
   overflow: hidden;
 `
@@ -85,7 +85,7 @@ const CloudWrapper = styled.div`
       bottom: -300px;
     }
   }
-`;
+`
 
 const StyledHeading = styled(Heading)`
   font-weight: bold;
@@ -103,7 +103,7 @@ const StyledHeading = styled(Heading)`
     font-size: 32px;
     line-height: 40px;
   }
-`;
+`
 
 const StyledText = styled(Text)`
   width: 70%;
@@ -128,7 +128,7 @@ const StyledText = styled(Text)`
     line-height: 20px;
     width: 100%;
   }
-`;
+`
 
 const StyledButton = styled(Button)`
   margin: 32px auto 48px auto;
@@ -138,13 +138,13 @@ const StyledButton = styled(Button)`
   @media screen and (max-width: 480px) {
     margin: 20px auto;
   }
-`;
+`
 
 type PropsType = {
   redirectURL?: string
 }
 
-const NotFound = ({ redirectURL = "https://alium.finance/" }: PropsType) => {
+const NotFound: React.FC<PropsType> = ({ redirectURL = 'https://alium.finance/' }) => {
   return (
     <StyledWrapper>
       <InfoWrapper>
@@ -172,9 +172,7 @@ const NotFound = ({ redirectURL = "https://alium.finance/" }: PropsType) => {
         </CloudWrapper>
       </CloudsWrapper>
     </StyledWrapper>
-  );
-};
+  )
+}
 
-NotFound.defaultProps = {};
-
-export default NotFound;
+export default NotFound

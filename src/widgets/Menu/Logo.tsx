@@ -1,14 +1,14 @@
-import React from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import { LogoIcon } from "../../components/Svg";
-import Flex from "../../components/Flex/Flex";
-import { LogoIcon as LogoWithText } from "./icons";
+import React from 'react'
+import styled from 'styled-components'
+import { Link } from 'react-router-dom'
+import { LogoIcon } from '../../components/Svg'
+import Flex from '../../components/Flex/Flex'
+import { LogoIcon as LogoWithText } from './icons'
 
 interface Props {
-  isDark: boolean;
-  href: string;
-  isPushed?: boolean;
+  isDark: boolean
+  href: string
+  isPushed?: boolean
 }
 
 const StyledLink = styled(Link)`
@@ -28,32 +28,34 @@ const StyledLink = styled(Link)`
       display: block;
     }
   }
-`;
-
+`
 
 const Logo: React.FC<Props> = ({ isDark, href, isPushed }) => {
-  const isAbsoluteUrl = href.startsWith("http");
+  const isAbsoluteUrl = href.startsWith('http')
   const innerLogo = (
     <>
       <LogoIcon className="mobile-icon" />
-      {!isPushed ? <LogoWithText className="desktop-icon" isDark={isDark} />
-        :  <LogoWithText className="desktop-icon" isDark={isDark} withText/>}
+      {!isPushed ? (
+        <LogoWithText className="desktop-icon" isDark={isDark} />
+      ) : (
+        <LogoWithText className="desktop-icon" isDark={isDark} withText />
+      )}
     </>
-  );
+  )
 
   return (
     <Flex>
       {isAbsoluteUrl ? (
-        <StyledLink as="a" href={href} aria-label="Pancake home page">
+        <StyledLink as="a" href={href} aria-label="Alium home page">
           {innerLogo}
         </StyledLink>
       ) : (
-        <StyledLink to={href} aria-label="Pancake home page">
+        <StyledLink to={href} aria-label="Alium home page">
           {innerLogo}
         </StyledLink>
       )}
     </Flex>
-  );
-};
+  )
+}
 
-export default Logo;
+export default Logo

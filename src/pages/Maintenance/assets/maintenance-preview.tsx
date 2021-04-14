@@ -1,5 +1,5 @@
-import React from "react";
-import { SvgProps } from "../../../components/Svg/types";
+import React from 'react'
+import { SvgProps } from '../../../components/Svg/types'
 
 const Icon: React.FC<SvgProps> = () => {
   return (
@@ -2182,7 +2182,7 @@ const Icon: React.FC<SvgProps> = () => {
         </linearGradient>
       </defs>
     </svg>
-  );
-};
+  )
+}
 
-export default Icon;
+export default Icon

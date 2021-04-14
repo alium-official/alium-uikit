@@ -1,13 +1,13 @@
-import React from "react";
-import noop from "lodash/noop";
-import { BrowserRouter } from "react-router-dom";
-import { renderWithTheme } from "../../testHelpers";
-import { Menu, menuConfig, LangType } from "../../widgets/Menu";
+import React from 'react'
+import noop from 'lodash/noop'
+import { BrowserRouter } from 'react-router-dom'
+import { renderWithTheme } from '../../testHelpers'
+import { Menu, menuConfig, LangType } from '../../widgets/Menu'
 
 /**
  * @see https://jestjs.io/docs/en/manual-mocks
  */
-Object.defineProperty(window, "matchMedia", {
+Object.defineProperty(window, 'matchMedia', {
   writable: true,
   value: jest.fn().mockImplementation((query) => ({
     matches: false,
@@ -19,11 +19,9 @@ Object.defineProperty(window, "matchMedia", {
     removeEventListener: jest.fn(),
     dispatchEvent: jest.fn(),
   })),
-});
+})
 
-const langs: LangType[] = [...Array(20)].map((_, i) => ({ code: `en${i}`, language: `English${i}` }));
-
-it("renders correctly", () => {
+it('renders correctly', () => {
   const { asFragment } = renderWithTheme(
     <BrowserRouter>
       <Menu
@@ -32,16 +30,12 @@ it("renders correctly", () => {
         logout={noop}
         isDark={false}
         toggleTheme={noop}
-        langs={langs}
-        setLang={noop}
-        currentLang="EN"
-        cakePriceUsd={0.23158668932877668}
         links={menuConfig}
       >
         body
       </Menu>
     </BrowserRouter>
-  );
+  )
 
   expect(asFragment()).toMatchInlineSnapshot(`
     <DocumentFragment>
@@ -72,7 +66,7 @@ it("renders correctly", () => {
               </svg>
             </button>
             <a
-              aria-label="Pancake home page"
+              aria-label="Alium home page"
               class="sc-jSgupP jRnhKc"
               href="/"
             >
@@ -591,5 +585,5 @@ it("renders correctly", () => {
         </div>
       </div>
     </DocumentFragment>
-  `);
-});
+  `)
+})

@@ -1,11 +1,11 @@
-import React from "react";
-import noop from "lodash/noop";
-import { renderWithTheme } from "../../testHelpers";
-import ConnectModal from "../../widgets/WalletModal/ConnectModal";
-import AccountModal from "../../widgets/WalletModal/AccountModal";
+import React from 'react'
+import noop from 'lodash/noop'
+import { renderWithTheme } from '../../testHelpers'
+import ConnectModal from '../../widgets/WalletModal/ConnectModal'
+import AccountModal from '../../widgets/WalletModal/AccountModal'
 
-it("renders ConnectModal correctly", () => {
-  const { asFragment } = renderWithTheme(<ConnectModal login={noop} />);
+it('renders ConnectModal correctly', () => {
+  const { asFragment } = renderWithTheme(<ConnectModal login={noop} />)
   expect(asFragment()).toMatchInlineSnapshot(`
     <DocumentFragment>
       <div
@@ -397,7 +397,6 @@ it("renders ConnectModal correctly", () => {
           <a
             class="sc-bdfBwQ sc-gsTCUz cxXgLd djpNeP sc-iqHYGH hzLTbV"
             color="primary"
-            href="https://docs.pancakeswap.finance/guides/faq#how-do-i-set-up-my-wallet-on-binance-smart-chain"
             rel="noreferrer noopener"
             target="_blank"
           >
@@ -417,13 +416,13 @@ it("renders ConnectModal correctly", () => {
         </div>
       </div>
     </DocumentFragment>
-  `);
-});
+  `)
+})
 
-it("renders AccountModal correctly", () => {
+it('renders AccountModal correctly', () => {
   const { asFragment } = renderWithTheme(
     <AccountModal account="0xb218C5D6aF1F979aC42BC68d98A5A0D796C6aB01" logout={noop} />
-  );
+  )
   expect(asFragment()).toMatchInlineSnapshot(`
     <DocumentFragment>
       <div
@@ -531,5 +530,5 @@ it("renders AccountModal correctly", () => {
         </div>
       </div>
     </DocumentFragment>
-  `);
-});
+  `)
+})
