@@ -1,12 +1,12 @@
-import React from 'react'
-import Maintenance from './Maintenance'
+import React from "react";
+import { Maintenance } from "./index";
 
 export default {
-  title: 'Pages/Maintenance',
+  title: "Pages/Maintenance",
   component: Maintenance,
   argTypes: {},
-}
+};
 
 export const Default: React.FC = () => {
-  return <Maintenance />
-}
+  return <Maintenance />;
+};

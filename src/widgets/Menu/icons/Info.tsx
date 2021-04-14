@@ -1,16 +1,18 @@
-import React from 'react'
-import Svg from '../../../components/Svg/Svg'
-import { SvgProps } from '../../../components/Svg/types'
+import React from "react";
+import Svg from "../../../components/Svg/Svg";
+import { SvgProps } from "../../../components/Svg/types";
 
 const Icon: React.FC<SvgProps> = (props) => {
   return (
-    <Svg width="24" height="24" viewBox="0 0 24 24" fill="none" {...props}>
-      <path d="M3 3V18C3 19.6569 4.34315 21 6 21H21" stroke="#8990A5" strokeWidth="1.5" strokeLinecap="round" fill="none"/>
-      <path d="M6.24365 21L6.24365 10.25C6.24365 9.55964 6.8033 9 7.49365 9V9C8.18401 9 8.74365 9.55964 8.74365 10.25L8.74365 21" stroke="#8990A5" strokeWidth="1.5" strokeLinecap="round" fill="none"/>
-      <path d="M11.7437 21L11.7437 13.25C11.7437 12.5596 12.3033 12 12.9937 12V12C13.684 12 14.2437 12.5596 14.2437 13.25L14.2437 21" stroke="#8990A5" strokeWidth="1.5" strokeLinecap="round" fill="none"/>
-      <path opacity="0.5" d="M17.2437 21L17.2437 15.25C17.2437 14.5596 17.8033 14 18.4937 14V14C19.184 14 19.7437 14.5596 19.7437 15.25L19.7437 21" stroke="#8990A5" strokeWidth="1.5" strokeLinecap="round" fill="none"/>
+    <Svg viewBox="0 0 24 24" {...props}>
+      <path d="M5 7C5 6.44772 4.55228 6 4 6C3.44772 6 3 6.44772 3 7V18C3 19.1046 3.89543 20 5 20H20C20.5523 20 21 19.5523 21 19C21 18.4477 20.5523 18 20 18H5V7Z" />
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M19 17H7C6.44772 17 6 16.5523 6 16V12C6 11.4477 6.44772 11 7 11H10V10C10 9.44772 10.4477 9 11 9H14V7C14 6.44772 14.4477 6 15 6H19C19.5523 6 20 6.44772 20 7V16C20 16.5523 19.5523 17 19 17ZM16 8H18V15H16V8ZM12 15H14V11H12V15ZM10 13H8V15H10V13Z"
+      />
     </Svg>
-  )
-}
+  );
+};
 
-export default Icon
+export default Icon;

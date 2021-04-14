@@ -1,11 +1,11 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Text } from '../../components/Text'
-import { Heading } from '../../components/Heading'
-import { SocialNetworks } from '../../components/SocialNetworks'
-import MaintenancePreview from './assets/maintenance-preview'
-import MaintenanceCloudRight from './assets/background-cloud-right'
-import MaintenanceCloudLeft from './assets/background-cloud-left'
+import React from "react";
+import styled from "styled-components";
+import { Text } from "../../components/Text";
+import { Heading } from "../../components/Heading";
+import { SocialNetworks } from "../../components/SocialNetworks";
+import MaintenancePreview from "./assets/maintenance-preview";
+import MaintenanceCloudRight from "./assets/background-cloud-right";
+import MaintenanceCloudLeft from "./assets/background-cloud-left";
 
 const StyledWrapper = styled.div`
   z-index: 100;
@@ -31,7 +31,7 @@ const StyledWrapper = styled.div`
   @media screen and (max-width: 768px) {
     padding: 8px;
   }
-`
+`;
 
 const InfoWrapper = styled.div`
   display: flex;
@@ -45,20 +45,20 @@ const InfoWrapper = styled.div`
   @media screen and (max-width: 480px) {
     width: 100%;
   }
-`
+`;
 
 const ImageWrapper = styled.div`
   & > svg {
     width: 100%;
     height: auto;
   }
-`
+`;
 
 const CloudsWrapper = styled.div`
   top: 0;
   left: 0;
   position: absolute;
-  height: calc(100vh - 64px);
+  height: calc(100vh - 64px); 
   width: 100vw;
   overflow: hidden;
 `
@@ -87,7 +87,7 @@ const CloudWrapper = styled.div`
       bottom: -300px;
     }
   }
-`
+`;
 
 const StyledHeading = styled(Heading)`
   font-weight: bold;
@@ -105,7 +105,7 @@ const StyledHeading = styled(Heading)`
     font-size: 32px;
     line-height: 40px;
   }
-`
+`;
 
 const StyledText = styled(Text)`
   width: 70%;
@@ -124,9 +124,9 @@ const StyledText = styled(Text)`
     line-height: 20px;
     width: 100%;
   }
-`
+`;
 
-const Maintenance: React.FC = () => {
+const Maintenance = () => {
   return (
     <StyledWrapper>
       <InfoWrapper>
@@ -147,7 +147,9 @@ const Maintenance: React.FC = () => {
         </CloudWrapper>
       </CloudsWrapper>
     </StyledWrapper>
-  )
-}
+  );
+};
 
-export default Maintenance
+Maintenance.defaultProps = {};
+
+export default Maintenance;

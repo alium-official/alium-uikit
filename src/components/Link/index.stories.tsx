@@ -1,24 +1,25 @@
-import React from 'react'
-import { Link, LinkExternal } from './index'
-import CheckmarkCircleIcon from '../Svg/Icons/CheckmarkCircle'
-import Flex from '../Flex/Flex'
+import React from "react";
+import { PancakesIcon } from "../Svg";
+import { Link, LinkExternal } from "./index";
+import CheckmarkCircleIcon from "../Svg/Icons/CheckmarkCircle";
+import Flex from "../Flex/Flex";
 
 export default {
-  title: 'Components/Link',
+  title: "Components/Link",
   component: Link,
   argTypes: {
     fontSize: {
-      name: 'fontSize',
+      name: "fontSize",
       table: {
-        type: { summary: 'string', detail: 'Fontsize in px or em' },
-        defaultValue: { summary: '16px' },
+        type: { summary: "string", detail: "Fontsize in px or em" },
+        defaultValue: { summary: "16px" },
       },
       control: {
         type: null,
       },
     },
   },
-}
+};
 
 export const Default: React.FC = () => {
   return (
@@ -37,13 +38,14 @@ export const Default: React.FC = () => {
         </Link>
       </div>
       <div>
-        <LinkExternal href="/">
-          <Flex>
-            <CheckmarkCircleIcon color="primaryBright" marginRight="8px" />
-            LinkExternal
-          </Flex>
-        </LinkExternal>
+        <Link href="/">
+          With icon
+          <PancakesIcon />
+        </Link>
+      </div>
+      <div>
+        <LinkExternal href="/"><Flex><CheckmarkCircleIcon color="primaryBright" marginRight="8px"/>LinkExternal</Flex></LinkExternal>
       </div>
     </div>
-  )
-}
+  );
+};

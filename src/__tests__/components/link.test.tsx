@@ -1,30 +1,30 @@
-import React from 'react'
-import { renderWithTheme } from '../../testHelpers'
-import { Link, LinkExternal } from '../../components/Link'
+import React from "react";
+import { renderWithTheme } from "../../testHelpers";
+import { Link, LinkExternal } from "../../components/Link";
 
-it('renders link correctly', () => {
-  const { asFragment } = renderWithTheme(<Link href="https://alium.finance">Link</Link>)
+it("renders link correctly", () => {
+  const { asFragment } = renderWithTheme(<Link href="https://pancakeswap.finance">Link</Link>);
   expect(asFragment()).toMatchInlineSnapshot(`
     <DocumentFragment>
       <a
         class="sc-bdfBwQ sc-gsTCUz cxXgLd djpNeP"
         color="primary"
-        href="https://alium.finance"
+        href="https://pancakeswap.finance"
       >
         Link
       </a>
     </DocumentFragment>
-  `)
-})
+  `);
+});
 
-it('renders link external link correctly', () => {
-  const { asFragment } = renderWithTheme(<LinkExternal href="https://alium.finance">Link</LinkExternal>)
+it("renders link external link correctly", () => {
+  const { asFragment } = renderWithTheme(<LinkExternal href="https://pancakeswap.finance">Link</LinkExternal>);
   expect(asFragment()).toMatchInlineSnapshot(`
     <DocumentFragment>
       <a
         class="sc-bdfBwQ sc-gsTCUz cxXgLd djpNeP"
         color="primary"
-        href="https://alium.finance"
+        href="https://pancakeswap.finance"
         rel="noreferrer noopener"
         target="_blank"
       >
@@ -42,5 +42,5 @@ it('renders link external link correctly', () => {
         </svg>
       </a>
     </DocumentFragment>
-  `)
-})
+  `);
+});

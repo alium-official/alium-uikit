@@ -1,19 +1,19 @@
-import styled, { DefaultTheme } from 'styled-components'
-import { space } from 'styled-system'
-import { ButtonProps, ButtonThemeVariant, variants } from './types'
+import styled, { DefaultTheme } from "styled-components";
+import { space } from "styled-system";
+import { ButtonProps, ButtonThemeVariant, variants } from "./types";
 
 type ThemedProps = {
-  theme: DefaultTheme
-} & ButtonProps
+  theme: DefaultTheme;
+} & ButtonProps;
 
-const getDisabledStyles = ({ isloading, theme }: ThemedProps) => {
-  if (isloading === true) {
+const getDisabledStyles = ({ isLoading, theme }: ThemedProps) => {
+  if (isLoading === true) {
     return `
       &:disabled,
       &.button--disabled {
         cursor: not-allowed;
       }
-    `
+    `;
   }
 
   return `
@@ -25,77 +25,73 @@ const getDisabledStyles = ({ isloading, theme }: ThemedProps) => {
       color: ${theme.colors.textDisabled};
       cursor: not-allowed;
     }
-  `
-}
+  `;
+};
 
 const removePointerEvents = ({ disabled, as }: ThemedProps) => {
-  if (disabled && as && as !== 'button') {
+  if (disabled && as && as !== "button") {
     return `
       pointer-events: none;
-    `
+    `;
   }
 
-  return ''
-}
+  return "";
+};
 
 const getButtonVariantProp = (prop: keyof ButtonThemeVariant) => ({
   theme,
   variant = variants.PRIMARY,
 }: ThemedProps) => {
-  return theme.button[variant][prop]
-}
+  return theme.button[variant][prop];
+};
 
 const StyledButton = styled.button<ButtonProps>`
   align-items: center;
-  background-color: ${getButtonVariantProp('background')};
-  border: ${getButtonVariantProp('border')};
+  background-color: ${getButtonVariantProp("background")};
+  border: ${getButtonVariantProp("border")};
   border-radius: 6px;
-  color: ${getButtonVariantProp('color')};
+  color: ${getButtonVariantProp("color")};
   cursor: pointer;
   display: inline-flex;
   font-family: inherit;
   font-size: 14px;
   font-weight: 600;
   /* max-content instead of auto for Safari fix */
-  width: ${({ fullwidth }) => (fullwidth ? '100%' : 'max-content')};
-  height: ${({ size }) => (size === 'sm' ? '32px' : '48px')};
+  width: ${({ fullWidth }) => (fullWidth ? "100%" : "max-content")};
+  height: ${({ size }) => (size === "sm" ? "32px" : "48px")};
   line-height: 1;
   letter-spacing: 0.03em;
   justify-content: center;
   outline: 0;
-  padding: ${({ size }) => (size === 'sm' ? '0 16px' : '0 24px')};
+  padding: ${({ size }) => (size === "sm" ? "0 16px" : "0 24px")};
   transition: background-color 0.2s;
-  opacity: ${({ isloading }) => (isloading ? 0.5 : 1)};
+  opacity: ${({ isLoading }) => (isLoading ? 0.5 : 1)};
 
   &:hover:not(:disabled):not(.button--disabled):not(:active) {
-    background-color: ${getButtonVariantProp('backgroundHover')};
-    border-color: ${getButtonVariantProp('borderColorHover')};
+    background-color: ${getButtonVariantProp("backgroundHover")};
+    border-color: ${getButtonVariantProp("borderColorHover")};
   }
   &:hover {
-    &,
-    & > div,
-    & p,
-    & span {
-      color: ${getButtonVariantProp('colorHover')};
+    &, & > div, & p, & span {
+      color: ${getButtonVariantProp("colorHover")};
     }
     & svg {
-      fill: ${getButtonVariantProp('colorHover')};
+      fill: ${getButtonVariantProp("colorHover")};
     }
+
   }
 
   &:focus:not(:active) {
-    color: ${getButtonVariantProp('colorPressed')};
+    color: ${getButtonVariantProp("colorPressed")};
     // box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.secondary};
   }
 
   &:active {
-    background-color: ${getButtonVariantProp('backgroundActive')};
-    box-shadow: inset 0px 3px 0px ${getButtonVariantProp('boxShadow')};
+    background-color: ${getButtonVariantProp("backgroundActive")};
+    box-shadow: inset 0px 3px 0px ${getButtonVariantProp("boxShadow")};
   }
-
-  ${({ buttonType }) =>
-    buttonType === 'close' &&
-    `
+  
+  ${({buttonType})=> buttonType === 'close' && `
     border: 1px solid #D2D6E5;
     box-sizing: border-box;
     border-radius: 6px;
@@ -106,10 +102,8 @@ const StyledButton = styled.button<ButtonProps>`
        border: 1px solid #D2D6E5 !important;
     }
   `}
-
-  ${({ buttonType }) =>
-    buttonType === 'max' &&
-    `
+  
+  ${({ buttonType }) => (buttonType === 'max' && `
    display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -129,16 +123,16 @@ const StyledButton = styled.button<ButtonProps>`
       box-shadow: inset 0px 2px 0px #A29ED5;
       background: #CBC8EE !important;
     }
-  `}
+  `)}
 
   ${getDisabledStyles}
   ${removePointerEvents}
   ${space}
-`
+`;
 
 StyledButton.defaultProps = {
-  fullwidth: false,
-  type: 'button',
-}
+  fullWidth: false,
+  type: "button",
+};
 
-export default StyledButton
+export default StyledButton;

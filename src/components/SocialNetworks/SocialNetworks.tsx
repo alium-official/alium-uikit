@@ -1,13 +1,13 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
-import { GithubIcon, TelegramIcon, TwitterIcon, MediumIcon } from './social-icons'
+import { GithubIcon, TelegramIcon, TwitterIcon, MediumIcon } from "./social-icons";
 
 const StyledWrapper = styled.div`
   @media screen and (max-width: 1024px) {
     margin: 0 auto;
   }
-`
+`;
 
 const LinkItem = styled.a`
   cursor: pointer;
@@ -15,7 +15,7 @@ const LinkItem = styled.a`
   border: none;
   background: none;
   padding: 0 4px;
-`
+`;
 
 const SocialNetworks = () => {
   return (
@@ -33,7 +33,7 @@ const SocialNetworks = () => {
         <MediumIcon />
       </LinkItem>
     </StyledWrapper>
-  )
-}
+  );
+};
 
-export default SocialNetworks
+export default SocialNetworks;

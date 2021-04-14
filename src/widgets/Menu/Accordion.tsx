@@ -1,15 +1,15 @@
-import React, { useState } from 'react'
-import styled from 'styled-components'
-import { MENU_ENTRY_HEIGHT } from './config'
-import { MenuEntry, LinkLabel } from './MenuEntry'
-import { PushedProps } from './types'
-import { ArrowDropDownIcon, ArrowDropUpIcon } from '../../components/Svg'
+import React, { useState } from "react";
+import styled from "styled-components";
+import { MENU_ENTRY_HEIGHT } from "./config";
+import { MenuEntry, LinkLabel } from "./MenuEntry";
+import { PushedProps } from "./types";
+import { ArrowDropDownIcon, ArrowDropUpIcon } from "../../components/Svg";
 
 interface Props extends PushedProps {
-  label: string
-  icon: React.ReactElement
-  initialOpenState?: boolean
-  className?: string
+  label: string;
+  icon: React.ReactElement;
+  initialOpenState?: boolean;
+  className?: string;
 }
 
 const Container = styled.div<{ isOpen: boolean }>`
@@ -20,43 +20,42 @@ const Container = styled.div<{ isOpen: boolean }>`
   div:first-child > div {
     margin-left: 8px;
     padding-bottom: 2px;
-    ${({ isOpen }) => isOpen && `color: #24BA7B;`}
+    ${({isOpen})=> isOpen && `color: #24BA7B;`}
   }
-
+  
   div:first-child > svg * {
-    ${({ isOpen }) => isOpen && `stroke: #24BA7B;`}
+    ${({isOpen})=> isOpen && `stroke: #24BA7B;`}
   }
-
+  
   @media screen and (max-width: 968px) {
     > div > svg:last-child {
-      display: none;
+      display: none
     }
   }
-
+  
   // @media screen and (min-width: 968px) {
-  //   ${({ isOpen }) =>
-    isOpen &&
-    `
+  //   ${({ isOpen }) => (isOpen && `
   //   box-shadow: 0px 6px 12px rgba(185, 189, 208, 0.4);
   //   border-radius: 6px;
-  // `};
+  // `)};
   // }
-`
+`;
 
-const AccordionContent = styled.div<{ isOpen: boolean; isPushed: boolean; maxHeight: number }>`
+const AccordionContent = styled.div<{ isOpen: boolean; isPushed: boolean; maxHeight: number;}>`
   max-height: ${({ isOpen, maxHeight }) => (isOpen ? `${maxHeight}px` : 0)};
   transition: max-height 0.3s ease-out;
   overflow: hidden;
-
+  
   > div > a {
     padding-left: 25px;
-    color: #8990a5;
+    color: #8990A5;
+  }
+  
+  @media screen and (max-width: 968px) {
+     max-height: ${({ maxHeight }) => `${maxHeight}px`};
   }
 
-  @media screen and (max-width: 968px) {
-    max-height: ${({ maxHeight }) => `${maxHeight}px`};
-  }
-`
+`;
 
 const Accordion: React.FC<Props> = ({
   label,
@@ -67,16 +66,16 @@ const Accordion: React.FC<Props> = ({
   children,
   className,
 }) => {
-  const [isOpen, setIsOpen] = useState(initialOpenState)
+  const [isOpen, setIsOpen] = useState(initialOpenState);
 
   const handleClick = () => {
     if (isPushed) {
-      setIsOpen((prevState) => !prevState)
+      setIsOpen((prevState) => !prevState);
     } else {
-      pushNav(true)
-      setIsOpen(true)
+      pushNav(true);
+      setIsOpen(true);
     }
-  }
+  };
 
   return (
     <Container isOpen={isOpen}>
@@ -93,7 +92,7 @@ const Accordion: React.FC<Props> = ({
         {children}
       </AccordionContent>
     </Container>
-  )
-}
+  );
+};
 
-export default Accordion
+export default Accordion;

@@ -1,6 +1,6 @@
 {
   "name": "@aliumswap/uikit",
-  "version": "0.11.44",
+  "version": "0.10.74.1",
   "description": "Set of UI components for alium projects",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -25,12 +25,11 @@
     ]
   },
   "devDependencies": {
-    "@aliumswap/sdk": "^1.1.10",
-    "@aliumswap/eslint-config-aliumswap": "^1.0.0",
     "@babel/core": "^7.12.16",
     "@babel/preset-env": "^7.12.16",
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
+    "@pancakeswap-libs/eslint-config-pancake": "0.1.0",
     "@rollup/plugin-typescript": "^8.2.0",
     "@storybook/addon-a11y": "^6.1.18",
     "@storybook/addon-actions": "^6.1.18",
@@ -40,7 +39,6 @@
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.5",
     "@types/react": "^17.0.2",
-    "@types/react-dom": "^17.0.3",
     "@types/react-router-dom": "^5.1.6",
     "@types/react-transition-group": "^4.4.0",
     "@types/styled-components": "^5.1.4",

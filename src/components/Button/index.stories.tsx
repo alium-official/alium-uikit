@@ -1,12 +1,12 @@
-import React from 'react'
-import styled from 'styled-components'
-import { BrowserRouter, Link } from 'react-router-dom'
-import capitalize from 'lodash/capitalize'
-import Flex from '../Flex/Flex'
-import { LogoIcon, AddIcon, AutoRenewIcon, CloseIcon } from '../Svg'
-import Button from './Button'
-import IconButton from './IconButton'
-import { variants } from './types'
+import React from "react";
+import styled from "styled-components";
+import { BrowserRouter, Link } from "react-router-dom";
+import capitalize from "lodash/capitalize";
+import Flex from "../Flex/Flex";
+import { LogoIcon, AddIcon, AutoRenewIcon, CloseIcon } from "../Svg";
+import Button from "./Button";
+import IconButton from "./IconButton";
+import { variants } from "./types";
 
 const Row = styled(Flex)`
   margin-bottom: 32px;
@@ -14,13 +14,13 @@ const Row = styled(Flex)`
   & > a + a {
     margin-left: 16px;
   }
-`
+`;
 
 export default {
-  title: 'Components/Button',
+  title: "Components/Button",
   component: Button,
   argTypes: {},
-}
+};
 
 export const Default: React.FC = () => {
   return (
@@ -37,31 +37,31 @@ export const Default: React.FC = () => {
         </Row>
       ))}
     </>
-  )
-}
+  );
+};
 
 export const Variants: React.FC = () => {
   return (
     <BrowserRouter>
       <Row>
-        <Button as="a" href="https://alium.finance" target="_blank" rel="noreferrer">
+        <Button as="a" href="https://pancakeswap.finance" target="_blank" rel="noreferrer">
           As an anchor
         </Button>
         <Button as={Link} to="/router-link" variant="secondary">
           As an React Router link
         </Button>
-        <Button as="a" href="https://alium.finance" disabled>
+        <Button as="a" href="https://pancakeswap.finance" disabled>
           As an anchor (disabled)
         </Button>
       </Row>
       <Row>
-        <Button fullwidth>Full size</Button>
+        <Button fullWidth>Full size</Button>
       </Row>
       <Row>
-        <Button isloading endIcon={<AutoRenewIcon spin color="currentColor" />}>
+        <Button isLoading endIcon={<AutoRenewIcon spin color="currentColor" />}>
           Approving
         </Button>
-        <Button isloading variant="success">
+        <Button isLoading variant="success">
           Approving
         </Button>
       </Row>
@@ -92,8 +92,8 @@ export const Variants: React.FC = () => {
         </IconButton>
       </Row>
       <Row>
-        <Button buttonType="max">MAX</Button>
+        <Button buttonType="max" >MAX</Button>
       </Row>
     </BrowserRouter>
-  )
-}
+  );
+};
