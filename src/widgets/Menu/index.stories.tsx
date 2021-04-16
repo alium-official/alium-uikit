@@ -26,15 +26,6 @@ export const Connected: React.FC = () => {
     });
   }
 
-  const useBalance = async () => {
-    // const bal = useCurrencyBalance(account as string, ETHER)
-    // return bal?.toSignificant(6);
-    const result = await later()
-    return result
-  }
-
-  // useBalance().then((result)=>console.log('result', result))
-
   return (
     <BrowserRouter>
       <Menu
@@ -46,7 +37,7 @@ export const Connected: React.FC = () => {
         links={links}
         balance={balance}
         onTransactionHistoryHandler={openModal}
-        balanceHook={useBalance}
+        balanceHook={later}
       >
         <div>
           <Heading as="h1" mb="8px">
