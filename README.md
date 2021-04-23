@@ -16,7 +16,7 @@ Before using Alium UIkit, you need to provide the theme file to styled-component
 
 ```
 import { ThemeProvider } from 'styled-components'
-import { light, dark } from '@aliumswap/uikit'
+import { light, dark } from '@alium-official/uikit'
 ...
 <ThemeProvider theme={isDark}>...</ThemeProvider>
 ```
@@ -26,7 +26,7 @@ import { light, dark } from '@aliumswap/uikit'
 A reset CSS is available as a global styled component.
 
 ```
-import { ResetCSS } from '@aliumswap/uikit'
+import { ResetCSS } from '@alium-official/uikit'
 ...
 <ResetCSS />
 ```
