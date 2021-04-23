@@ -1,16 +1,17 @@
 {
-  "name": "@deepfake/uikit",
+  "name": "@aliumswap/uikit",
   "version": "0.11.46",
-  "description": "Set of UI components for projects",
+  "description": "Set of UI components for alium projects",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
+  "repository": "https://github.com/aliumswap/alium-uikit",
   "license": "MIT",
   "scripts": {
-    "build": "rimraf ./dist && rollup -c && tsc -d --emitDeclarationOnly --declarationDir dist",
+    "build": "rm -rf ./dist && rollup -c && tsc -d --emitDeclarationOnly --declarationDir dist",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx}'",
     "storybook": "start-storybook -p 6006",
@@ -24,6 +25,8 @@
     ]
   },
   "devDependencies": {
+    "@aliumswap/sdk": "^1.1.10",
+    "@aliumswap/eslint-config-aliumswap": "^1.0.0",
     "@babel/core": "^7.12.16",
     "@babel/preset-env": "^7.12.16",
     "@commitlint/cli": "^11.0.0",
@@ -55,7 +58,6 @@
     "react-dom": "^17.0.1",
     "react-is": "^17.0.1",
     "react-router-dom": "^5.2.0",
-    "rimraf": "^3.0.2",
     "rollup": "^2.39.0",
     "styled-components": "^5.2.0",
     "themeprovider-storybook": "^1.6.4",
@@ -77,15 +79,5 @@
     "react-transition-group": "^4.4.1",
     "styled-system": "^5.1.5",
     "typeface-roboto": "^1.1.13"
-  },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org",
-    "tag": "next"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/alium-official/alium-uikit.git"
-  },
-  "author": ""
+  }
 }
