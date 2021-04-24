@@ -231,7 +231,7 @@ const Menu: React.FC<NavProps> = ({
           <StyledLogoWithoutText>
             <Logo width="40px" height="40px" />
           </StyledLogoWithoutText>
-          {betaText &&
+          {false && betaText &&
             <StyledBetaIcon isPushed={isPushed}>
               {/* <BetaIcon height="28px" width="43px" /> */}
               <StyledText color="#8990A5">{betaText.slice(0,betaText?.lastIndexOf('here'))}<StyledClickableLink href={betaLink}>here</StyledClickableLink>{betaText.slice(betaText?.lastIndexOf('here')+4)}</StyledText>
