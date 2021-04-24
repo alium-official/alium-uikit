@@ -20,7 +20,7 @@ const LinkItem = styled.a`
 const SocialNetworks = () => {
   return (
     <StyledWrapper>
-      <LinkItem href="https://github.com/Aliumswap" target="_blank" rel="noopener  noreferrer">
+      <LinkItem href="https://github.com/alium-official" target="_blank" rel="noopener  noreferrer">
         <GithubIcon />
       </LinkItem>
       <LinkItem href="https://t.me/aliumswap_official" target="_blank" rel="noopener  noreferrer">
