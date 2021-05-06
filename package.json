@@ -77,7 +77,8 @@
     "react-loader-spinner": "^4.0.0",
     "react-transition-group": "^4.4.1",
     "styled-system": "^5.1.5",
-    "typeface-roboto": "^1.1.13"
+    "typeface-roboto": "^1.1.13",
+    "universal-cookie": "^4.0.4"
   },
   "publishConfig": {
     "access": "public",
