@@ -2,10 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 import Button from '../../components/Button/Button'
 import Text from '../../components/Text/Text'
-import { connectorLocalStorageKey } from './config'
-import { ConnectorNames, Login, WalletsConfig } from './types'
+import { Login, WalletsConfig } from './types'
 import Flex from '../../components/Flex/Flex'
 import { CheckmarkCircleIcon } from '../../components/Svg'
+import setConnectorId from '../../util/connectorId/setConnectorId'
 
 interface Props {
   walletConfig: WalletsConfig
@@ -79,12 +79,12 @@ const WalletCard: React.FC<Props> = ({
 
   const onClickHandler = () => {
     login(walletConfig.connectorId)
-    window.localStorage.setItem(connectorLocalStorageKey, walletConfig.connectorId)
+    setConnectorId(walletConfig.connectorId)
     setSelectedWallet(title)
     onDismiss()
     setTimeout(() => {
-      window.location.reload()      
-    }, 500);
+      window.location.reload()
+    }, 500)
   }
 
   return (

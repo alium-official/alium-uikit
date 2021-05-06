@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { renderToStaticMarkup } from 'react-dom/server'
 import Button from '../../components/Button/Button'
 import Text from '../../components/Text/Text'
 import Flex from '../../components/Flex/Flex'
 import { Modal } from '../Modal'
-import { connectorLocalStorageKey } from './config'
 import DefaultAvatar from '../../components/Svg/Icons/DefaultAvatar'
 import InputCopy from '../../components/Svg/Icons/InputCopy'
 import MetaMask from '../../components/Svg/Icons/MetaMask'
 import { BSCScanIcon, ExitIcon, TransactionHistoryIcon, ModalBackgroundIcon } from '../../components/Svg'
+import removeConnectorId from '../../util/connectorId/removeConnectorId'
 
 interface Props {
   account: string
@@ -23,8 +23,8 @@ interface Props {
   tokenSymbol?: string
   networkName?: string
   balance?: string
-  onTransactionHistoryHandler?: any;
-  balanceHook?: any;
+  onTransactionHistoryHandler?: any
+  balanceHook?: any
 }
 
 const StyledBackGround = styled.div`
@@ -120,19 +120,19 @@ const AccountModal: React.FC<Props> = ({
   tokenSymbol = 'BNB',
   networkName = 'Binance Smart Chain',
   onTransactionHistoryHandler,
-  balanceHook
+  balanceHook,
 }) => {
   const [currentBalance, setBalance] = useState(balance)
   // balanceHook().then((result?: any)=>setBalance(result.toSignificant(6)))
-  useEffect(()=>{
+  useEffect(() => {
     // balanceHook().then((result)=>setBalance(result))
-    balanceHook().then((result?: any)=>setBalance(result.toSignificant(6)))
+    balanceHook().then((result?: any) => setBalance(result.toSignificant(6)))
   }, [balanceHook])
 
   // balanceHook().then((result)=>console.log(result.toSignificant(6)))
 
   return (
-    <Modal title={title} onDismiss={onDismiss} styledModalContent={{ padding: "0 24px 32px 24px" }}>
+    <Modal title={title} onDismiss={onDismiss} styledModalContent={{ padding: '0 24px 32px 24px' }}>
       <StyledBackGround style={{ backgroundImage: `url("data:image/svg+xml,${svgString}")` }}>
         <StyledInfo>
           <DefaultAvatar width="80px" height="80px" />
@@ -159,7 +159,7 @@ const AccountModal: React.FC<Props> = ({
           width="24px"
           onClick={() => {
             if (navigator.clipboard) {
-              navigator.clipboard.writeText(account);
+              navigator.clipboard.writeText(account)
             }
           }}
         />
@@ -177,9 +177,9 @@ const AccountModal: React.FC<Props> = ({
           size="md"
           variant="secondary"
           onClick={() => {
-            logout();
-            window.localStorage.removeItem(connectorLocalStorageKey);
-            onDismiss();
+            logout()
+            removeConnectorId()
+            onDismiss()
           }}
         >
           <ExitIcon mr={16} />
@@ -187,7 +187,7 @@ const AccountModal: React.FC<Props> = ({
         </StyledButton>
       </StyledFlex>
     </Modal>
-  );
+  )
 }
 
 export default AccountModal

@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from 'react'
 import { useModal } from '../Modal'
 import ConnectModal from './ConnectModal'
 import AccountModal from './AccountModal'
 import { Login } from './types'
+import { getChainId } from '../../util'
 
 interface ReturnType {
   onPresentConnectModal: () => void
@@ -21,9 +22,8 @@ const useWalletModal = (
   onTransactionHistoryHandler?: void,
   balanceHook?: void
 ): ReturnType => {
-  const params = new URLSearchParams(window.location.search);
-  const id = params.get('network');
-  
+  const id = getChainId()
+
   const [onPresentConnectModal] = useModal(<ConnectModal login={login} title={title} />)
   const [onPresentAccountModal] = useModal(
     <AccountModal
@@ -34,8 +34,8 @@ const useWalletModal = (
       balance={balance}
       explorerName={explorerName}
       explorerLink={explorerLink}
-      tokenSymbol={id === "56" || id === "97" ? "BNB" : "HT"}
-      networkName={id === "56" || id === "97" ? "Binance Smart Chain" : "Huobi ECO Chain"}
+      tokenSymbol={id === 56 || id === 97 ? 'BNB' : 'HT'}
+      networkName={id === 56 || id === 97 ? 'Binance Smart Chain' : 'Huobi ECO Chain'}
       onTransactionHistoryHandler={onTransactionHistoryHandler}
       balanceHook={balanceHook}
     />

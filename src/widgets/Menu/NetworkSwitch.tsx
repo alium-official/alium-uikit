@@ -4,6 +4,7 @@ import { NetworksConfig } from '../WalletModal/types'
 import { networks } from '../WalletModal/config'
 import { ArrowDropDownIcon, ArrowDropUpIcon } from '../../components/Svg'
 import switchNetwork from '../../util/switchNetwork'
+import { getChainId } from '../../util'
 
 const StyledDropDown = styled.div`
   width: 232px;
@@ -14,12 +15,12 @@ const StyledDropDown = styled.div`
   position: relative;
   cursor: pointer;
   margin-right: 24px;
-   transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
-  > svg * { 
+  transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+  > svg * {
     transition: stroke 200ms ease-in-out;
   }
   :hover {
-    background-color: #6C5DD3;
+    background-color: #6c5dd3;
     > * {
       color: white;
     }
@@ -27,7 +28,7 @@ const StyledDropDown = styled.div`
       stroke: white;
     }
   }
-  
+
   > svg {
     fill: #6c5dd3;
     position: absolute;
@@ -49,11 +50,11 @@ const StyledSelectedOption = styled.p`
   padding-left: 47px;
   margin-top: 15px;
   letter-spacing: 0.3px;
-  color: #6C5DD3;
+  color: #6c5dd3;
   font-size: 14px;
-  
+
   @media screen and (max-width: 967px) {
-    display:none;
+    display: none;
   }
 `
 
@@ -72,7 +73,7 @@ const StyledOptionsContainer = styled.div`
   }
   @media screen and (max-width: 967px) {
     position: absolute;
-    left: 0; 
+    left: 0;
     width: 180px;
   }
 `
@@ -104,16 +105,15 @@ const StyledIconContainer = styled.div`
 
 const NetworkSwitch: React.FC = () => {
   const [showOptions, setShowOptions] = useState(false)
-  const params = new URLSearchParams(window.location.search)
-  const id = params.get('network')
-  const [selectedOption, setSelectedOption] = useState(id === '256' || id === "128" ? networks[1].label : networks[0].label)
+  const id = getChainId()
+  const [selectedOption, setSelectedOption] = useState(id === 256 || id === 128 ? networks[1].label : networks[0].label)
 
   const handleClick = (item: NetworksConfig) => {
     setSelectedOption(item.label)
     switchNetwork(item.chainId, true)
   }
 
-  const { icon: Icon } = networks[networks.findIndex(network=>network.label === selectedOption)]
+  const { icon: Icon } = networks[networks.findIndex((network) => network.label === selectedOption)]
 
   return (
     <StyledDropDown onClick={() => setShowOptions(!showOptions)}>

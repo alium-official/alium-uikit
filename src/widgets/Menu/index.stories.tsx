@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from 'react'
 import noop from 'lodash/noop'
 import { BrowserRouter } from 'react-router-dom'
 import Flex from '../../components/Flex/Flex'
@@ -8,7 +8,7 @@ import Menu from './Menu'
 import { MenuEntry } from './MenuEntry'
 import { LangType } from './types'
 import { links } from './config'
-import useModal from "../Modal/useModal";
+import useModal from '../Modal/useModal'
 
 export default {
   title: 'Widgets/Menu',
@@ -21,9 +21,11 @@ export const Connected: React.FC = () => {
   const [balance, setBalance] = useState(undefined)
 
   function later() {
-    return new Promise(function(resolve) {
-      setTimeout(()=>{resolve(100)}, 3000);
-    });
+    return new Promise(function (resolve) {
+      setTimeout(() => {
+        resolve(100)
+      }, 3000)
+    })
   }
 
   return (
@@ -133,7 +135,7 @@ export const NotConnected: React.FC = () => {
   return (
     <BrowserRouter>
       <Menu
-        account={null}
+        account={undefined}
         login={noop}
         logout={noop}
         isDark

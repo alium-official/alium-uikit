@@ -10,6 +10,7 @@ import Flex from '../../components/Flex/Flex'
 import Text from '../../components/Text/Text'
 import NetworkSelector from './NetworkSelector'
 import switchNetwork from '../../util/switchNetwork'
+import getChainId from '../../util/chainId/getChainId'
 
 interface Props {
   login: Login
@@ -71,15 +72,16 @@ const StyledWalletFlex = styled(StyledFlex)`
 `
 
 const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null, title = 'Connect to a wallet' }) => {
-  const params = new URLSearchParams(window.location.search)
-  const id: string = params.get('network') as string
+  const id = getChainId()
 
-  const [selectedNetwork, setSelectedNetwork] = useState(id === '256' || id === '128' ? networks[1].title : networks[0].title)
+  const [selectedNetwork, setSelectedNetwork] = useState(
+    id === 256 || id === 128 ? networks[1].title : networks[0].title
+  )
   const [selectedWallet, setSelectedWallet] = useState('')
 
   const handleClose = () => {
-    const currentChainId = localStorage.getItem('chainId')
-    if (id && currentChainId && currentChainId !== id) switchNetwork(currentChainId, false)
+    const currentChainId = getChainId()
+    if (id && currentChainId && currentChainId !== id) switchNetwork(String(currentChainId), false)
     onDismiss()
   }
 
