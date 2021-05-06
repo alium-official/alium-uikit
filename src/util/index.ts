@@ -1,0 +1,6 @@
+export { default as getChainId } from './chainId/getChainId'
+export { default as removeChainId } from './chainId/removeChainId'
+export { default as setChainId } from './chainId/setChainId'
+export { default as getConnectorId } from './connectorId/getConnectorId'
+export { default as removeConnectorId } from './connectorId/removeConnectorId'
+export { default as setConnectorId } from './connectorId/setConnectorId'

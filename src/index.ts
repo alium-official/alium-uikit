@@ -39,3 +39,6 @@ export * from './pages/NotFound'
 // Theme
 export { default as ResetCSS } from './ResetCSS'
 export * from './theme'
+
+// Utils
+export * from './util'
