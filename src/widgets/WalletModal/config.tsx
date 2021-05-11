@@ -56,5 +56,3 @@ export const networks: NetworksConfig[] = [
     chainId: 128,
   },
 ]
-
-export const connectorLocalStorageKey = 'connectorId'

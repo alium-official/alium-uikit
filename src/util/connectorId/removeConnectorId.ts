@@ -1,5 +1,5 @@
 import Cookies from 'universal-cookie'
-import { connectorLocalStorageKey } from '../../widgets/WalletModal'
+import { connectorLocalStorageKey } from '../../config'
 import { getCookieOptions } from '../../config/getCookieOptions'
 
 const cookies = new Cookies()

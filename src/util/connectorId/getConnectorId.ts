@@ -1,6 +1,7 @@
 import Cookies from 'universal-cookie'
 import setConnectorId from './setConnectorId'
-import { connectorLocalStorageKey, ConnectorNames } from '../../widgets/WalletModal'
+import { connectorLocalStorageKey } from '../../config'
+import { ConnectorNames } from '../../widgets/WalletModal'
 
 const cookies = new Cookies()
 

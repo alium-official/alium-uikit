@@ -42,3 +42,6 @@ export * from './theme'
 
 // Utils
 export * from './util'
+
+// Config
+export * from './config'
