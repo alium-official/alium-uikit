@@ -21,7 +21,7 @@ export const links = [
   {
     label: 'Private Round NFTs',
     icon: 'PrivateRoundIcon',
-    href: '/account'
+    href: '/account',
   },
   {
     label: 'Analytics',
@@ -75,7 +75,7 @@ export const socials = [
   {
     label: 'Twitter',
     icon: 'TwitterIcon',
-    href: 'https://twitter.com/alium-official',
+    href: 'https://twitter.com/AliumSwap',
   },
   {
     label: 'Medium',
