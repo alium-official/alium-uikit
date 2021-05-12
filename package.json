@@ -1,6 +1,6 @@
 {
   "name": "@alium-official/uikit",
-  "version": "0.11.51",
+  "version": "0.11.52",
   "description": "Set of UI components for alium projects",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
