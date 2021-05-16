@@ -29,7 +29,7 @@ export const links = [
     items: [
       {
         label: 'Github',
-        href: 'https://github.com/alium-official',
+        href: 'https://github.com/Alium-Finance',
       },
       {
         label: 'Docs',
@@ -47,7 +47,7 @@ export const links = [
     items: [
       {
         label: 'Github',
-        href: 'https://github.com/alium-official',
+        href: 'https://github.com/Alium-Finance',
       },
       {
         label: 'Docs',
@@ -65,7 +65,7 @@ export const socials = [
   {
     label: 'GitHub',
     icon: 'GitHubIcon',
-    href: 'https://github.com/alium-official',
+    href: 'https://github.com/Alium-Finance',
   },
   {
     label: 'Telegram',
