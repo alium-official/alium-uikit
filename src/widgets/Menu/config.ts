@@ -1,3 +1,5 @@
+import { externalLinks } from '../../config'
+
 export const links = [
   {
     label: 'Home',
@@ -29,7 +31,7 @@ export const links = [
     items: [
       {
         label: 'Github',
-        href: 'https://github.com/Alium-Finance',
+        href: externalLinks.github,
       },
       {
         label: 'Docs',
@@ -37,7 +39,7 @@ export const links = [
       },
       {
         label: 'Blog',
-        href: 'https://alium.medium.com',
+        href: externalLinks.medium,
       },
     ],
   },
@@ -47,7 +49,7 @@ export const links = [
     items: [
       {
         label: 'Github',
-        href: 'https://github.com/Alium-Finance',
+        href: externalLinks.github,
       },
       {
         label: 'Docs',
@@ -55,7 +57,7 @@ export const links = [
       },
       {
         label: 'Blog',
-        href: 'https://alium.medium.com',
+        href: externalLinks.medium,
       },
     ],
   },
@@ -65,22 +67,22 @@ export const socials = [
   {
     label: 'GitHub',
     icon: 'GitHubIcon',
-    href: 'https://github.com/Alium-Finance',
+    href: externalLinks.github,
   },
   {
     label: 'Telegram',
     icon: 'TelegramIcon',
-    href: 'https://t.me/aliumswap_official',
+    href: externalLinks.telegram,
   },
   {
     label: 'Twitter',
     icon: 'TwitterIcon',
-    href: 'https://twitter.com/AliumSwap',
+    href: externalLinks.twitter,
   },
   {
     label: 'Medium',
     icon: 'MediumIcon',
-    href: 'https://aliumswap.medium.com/',
+    href: externalLinks.medium,
   },
 ]
 

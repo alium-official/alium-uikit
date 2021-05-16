@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { GithubIcon, TelegramIcon, TwitterIcon, MediumIcon } from './social-icons'
+import { externalLinks } from '../../config'
 
 const StyledWrapper = styled.div`
   @media screen and (max-width: 1024px) {
@@ -17,21 +18,21 @@ const LinkItem = styled.a`
   padding: 0 4px;
 `
 
+const links = [
+  { href: externalLinks.github, Icon: GithubIcon },
+  { href: externalLinks.telegram, Icon: TelegramIcon },
+  { href: externalLinks.twitter, Icon: TwitterIcon },
+  { href: externalLinks.medium, Icon: MediumIcon },
+]
+
 const SocialNetworks = () => {
   return (
     <StyledWrapper>
-      <LinkItem href="https://github.com/Alium-Finance" target="_blank" rel="noopener  noreferrer">
-        <GithubIcon />
-      </LinkItem>
-      <LinkItem href="https://t.me/aliumswap_official" target="_blank" rel="noopener  noreferrer">
-        <TelegramIcon />
-      </LinkItem>
-      <LinkItem href="https://twitter.com/AliumSwap" target="_blank" rel="noopener  noreferrer">
-        <TwitterIcon />
-      </LinkItem>
-      <LinkItem href="https://medium.com/@aliumswap" target="_blank" rel="noopener  noreferrer">
-        <MediumIcon />
-      </LinkItem>
+      {links.map(({ href, Icon }) => (
+        <LinkItem href={href} target="_blank" rel="noopener  noreferrer" key={href}>
+          <Icon />
+        </LinkItem>
+      ))}
     </StyledWrapper>
   )
 }
