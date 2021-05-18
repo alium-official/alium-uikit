@@ -84,6 +84,11 @@ export const socials = [
     icon: 'MediumIcon',
     href: externalLinks.medium,
   },
+  {
+    label: 'CoinGecko',
+    icon: 'CoinGeckoIcon',
+    href: externalLinks.coingecko,
+  },
 ]
 
 export const MENU_HEIGHT = 97
