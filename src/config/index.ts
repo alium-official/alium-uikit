@@ -7,4 +7,5 @@ export const externalLinks = {
   medium: 'https://aliumswap.medium.com',
   telegram: 'https://t.me/aliumswap_official',
   twitter: 'https://twitter.com/AliumSwap',
+  coingecko: 'https://www.coingecko.com/en/coins/alium-swap',
 }
