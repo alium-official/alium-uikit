@@ -57,7 +57,7 @@ const PanelFooter: React.FC<Props> = ({ isPushed }) => {
             const mr = index < socials.length - 1 ? '24px' : 0
             return (
               <StyledExternalLink external key={social.label} href={social.href} aria-label={social.label}>
-                <Icon {...iconProps} />
+                {Icon && <Icon {...iconProps} />}
               </StyledExternalLink>
             )
           })}
